@@ -5,10 +5,10 @@ const handlebars = require("express-handlebars");
 
 const connection = mysql.createPool({
   connectionLimit: 20,
-  host: "localhost",
-  user: "root",
-  password: "Andr0id30",
-  database: "crudapp"
+  host: "us-cdbr-iron-east-01.cleardb.net",
+  user: "b63a147029ca38",
+  password: "12bc8513",
+  database: "heroku_347ed904ce4f7b3git "
 });
 
 const app = express();
