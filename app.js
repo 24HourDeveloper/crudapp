@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 //getting users from database
 app.get("/", (req, res) => {
-  const sql = `SELECT * FROM people`;
+  const sql = `SELECT * FROM Persons`;
   connection.query(sql, (err, results) => {
     if (err) throw err;
     console.log(results);
@@ -37,7 +37,7 @@ app.get("/adduser", (req, res) => {
 app.post("/useradded", (req, res) => {
   const first = req.body.name1;
   const last = req.body.name2;
-  const sql = `INSERT INTO people (first_name, last_name) VALUES( '${first}', '${last}')`;
+  const sql = `INSERT INTO Persons (first_name, last_name) VALUES( '${first}', '${last}')`;
   connection.query(sql, (err, results) => {
     if (err) throw err;
     console.log(results);
@@ -46,7 +46,7 @@ app.post("/useradded", (req, res) => {
 });
 
 app.get("/updateuser", (req, res) => {
-  const sql = `SELECT * FROM people`;
+  const sql = `SELECT * FROM Persons`;
   connection.query(sql, (err, results) => {
     if (err) throw err;
     console.log(results);
@@ -58,7 +58,7 @@ app.get("/updateuser", (req, res) => {
 app.post("/userupdated", (req, res) => {
   const id = req.body.id;
   const fname = req.body.name1;
-  const sql = `UPDATE people SET first_name = '${fname}'  WHERE id = ${id}`;
+  const sql = `UPDATE Persons SET first_name = '${fname}'  WHERE id = ${id}`;
   connection.query(sql, (err, result) => {
     if (err) throw err;
     console.log(result);
