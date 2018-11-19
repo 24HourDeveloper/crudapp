@@ -46,7 +46,12 @@ app.post("/useradded", (req, res) => {
 });
 
 app.get("/updateuser", (req, res) => {
-  res.render("updateform");
+  const sql = `SELECT * FROM people`;
+  connection.query(sql, (err, results) => {
+    if (err) throw err;
+    console.log(results);
+    res.render("updateform", { fname: results });
+  });
 });
 
 //Update user
