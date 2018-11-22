@@ -45,6 +45,7 @@ app.post("/useradded", (req, res) => {
   });
 });
 
+//post request that takes user input and adds it to db
 app.post("/useradded2", (req, res) => {
   const fullname = {
     first_name: req.body.name1,
