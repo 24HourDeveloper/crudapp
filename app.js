@@ -37,7 +37,7 @@ app.get("/adduser", (req, res) => {
 app.post("/useradded", (req, res) => {
   const first = req.body.name1;
   const last = req.body.name2;
-  const sql = `INSER INTO Persons (first_name, last_name) VALUES( ?, ?)`;
+  const sql = `INSERT INTO Persons (first_name, last_name) VALUES( ?, ?)`;
   connection.query(sql, [first, last], (err, results) => {
     if (err) throw err;
     console.log(results);
@@ -50,7 +50,7 @@ app.post("/useradded2", (req, res) => {
     first_name: req.body.name1,
     last_name: req.body.name2
   };
-  const sql = `INSER INTO Persons SET ? `;
+  const sql = `INSERT INTO Persons SET ? `;
   connection.query(sql, fullname, (err, results) => {
     if (err) throw err;
     console.log(results);
