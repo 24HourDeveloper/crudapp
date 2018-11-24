@@ -7,9 +7,104 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crud App</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+
+    body {
+        width: 100%
+    }
+
+    .container {
+        width: 960px;
+        margin: 0 auto;
+        height: 600px;
+        box-shadow: 3px 4px 8px #888888;
+    }
+
+    .banner {
+        background-color: #00A86B;
+        color: #fff;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 8px #888888;
+    }
+
+    input {
+        display: block;
+
+        padding: 8px;
+        border-radius: 5px;
+        margin: 10px;
+        outline: none;
+        font-size: 20px
+    }
+
+    input:focus {
+        border-color: #00A86B;
+        box-shadow: 0 0 8px 0 #00A86B
+    }
+
+    input[type='submit'] {
+        background-color: #fff;
+        border: 2px solid #00A86B;
+        color: #00A86B;
+        font-size: 20px;
+        margin-top: 10px
+    }
+
+    .form-container {
+        display: flex;
+
+        justify-content: space-around;
+        align-content: stretch
+    }
+
+    label {
+        color: #00A86B;
+        font-size: 20px;
+
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .form {
+        flex-grow: 1;
+        padding: 20px;
+
+    }
+
+    @media only screen and (max-width: 700px) {
+        .container {
+            width: 500px;
+            margin: 0 auto;
+            height: 400px;
+        }
+    }
+</style>
 
 <body>
-    {{{body}}}
+    <div class="container">
+        <header>
+            <div class="banner">
+                <h1>Add User</h1>
+            </div>
+        </header>
+        <div class="form-container">
+            <div class="form">
+                {{{body}}}
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
