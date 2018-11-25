@@ -1,13 +1,22 @@
-<h1>Update User</h1>
-<form action="/userupdated" method="POST">
-    <label for="index">Choose ID</label>
-    <input type="number" name="id" id="index">
-    <label for="fname">Update First Name</label>
-    <input type="text" name="name1" id="fname">
-    <input type="submit" value="Submit">
-</form>
-<ul>
-    {{#each fname}}
-    <li>{{this.id}}--{{this.first_name}}-{{this.last_name}}</li>
-    {{/each}}
-</ul>
+<div class="form-container">
+    <div class="form">
+        <form action="/userupdated" method="POST">
+            <label for="index">Choose ID</label>
+            <input type="number" name="id" id="index">
+            <label for="fname">New First Name</label>
+            <input type="text" name="name1" id="fname">
+            <label for="lname">New Last Name</label>
+            <input type="text" name="name2" id="lname">
+            <input type="submit" value="Submit">
+            <div class="update-user"><a href="/adduser">Go To Add User Page</a></div>
+        </form>
+    </div>
+</div>
+
+<div class="person-list">
+    <ul>
+        {{#each fname}}
+        <li>[{{this.id}}] {{this.first_name}}-{{this.last_name}}</li>
+        {{/each}}
+    </ul>
+</div>

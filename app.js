@@ -30,7 +30,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/adduser", (req, res) => {
-  res.render("form");
+  const pageTitle = "Add User";
+  res.render("form", { title: pageTitle });
 });
 
 //Inserting user into database
@@ -60,11 +61,13 @@ app.post("/useradded2", (req, res) => {
 });
 
 app.get("/updateuser", (req, res) => {
+  const pageTitle = "Update User";
   const sql = `SELECT * FROM Persons`;
   connection.query(sql, (err, results) => {
     if (err) throw err;
-    console.log(results);
-    res.render("updateform", { fname: results });
+    //console.log(results);
+    console.log(pageTitle);
+    res.render("updateform", { fname: results, title: pageTitle });
   });
 });
 
@@ -72,10 +75,11 @@ app.get("/updateuser", (req, res) => {
 app.post("/userupdated", (req, res) => {
   const id = req.body.id;
   const fname = req.body.name1;
-  const sql = `UPDATE Persons SET first_name = '${fname}'  WHERE id = ${id}`;
+  const lname = req.body.name2;
+  const sql = `UPDATE Persons SET first_name = '${fname}', last_name = '${lname}' WHERE id = ${id}`;
   connection.query(sql, (err, result) => {
     if (err) throw err;
-    console.log(result);
+    //console.log(result);
     res.send("User Updated");
   });
 });
